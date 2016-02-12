@@ -16,3 +16,6 @@ Learner is Super-Easy Machine Learning Library to apply your own Object Detectio
 + Author: Sung-ju Kim
 + Email : goddoe2@gmail.com
 + github: https://github.com/goddoe
+
+##License
+>Apache 2.0 License
