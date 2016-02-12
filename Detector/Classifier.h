@@ -1,3 +1,9 @@
+// Author : Sung-ju Kim
+// Email  : goddoe2@gmail.com
+// github : https://github.com/goddoe
+// The MIT License (MIT)
+// Copyright (c) 2016 Sung-ju Kim
+
 #ifndef __CLASSIFIER_H__
 #define __CLASSIFIER_H__
 
@@ -29,11 +35,11 @@ namespace CRVL
         sj::Net *net;
         CvSVM svmRecognizer;
 
-		////////////////////////////////////////////////////////////////////////// 
-		// Constructor 
-		Classifier () 
+		//////////////////////////////////////////////////////////////////////////
+		// Constructor
+		Classifier ()
 		{
-			
+
 		}
 
         Classifier (char* recognitionPath, int m_learner, void (*getFeature)(Mat src, Mat& feature_CV_32FC1) );
@@ -49,7 +55,7 @@ namespace CRVL
 		int recognize(cv::Mat _src);
 	};
 
-	
+
 
 }
 #endif //__CLASSIFIER_H__

@@ -1,3 +1,9 @@
+// Author : Sung-ju Kim
+// Email  : goddoe2@gmail.com
+// github : https://github.com/goddoe
+// The MIT License (MIT)
+// Copyright (c) 2016 Sung-ju Kim
+
 #include "FeatureGenerator.h"
 
 namespace CRVL
@@ -24,7 +30,7 @@ namespace CRVL
 		cvtColor(_src, src, CV_BGR2GRAY);
 		//getHOG(src, Size(128,128), _outputFeature);
 		///////////////////////////////////// adaptive_thresholding ////////////////////////////////////
-		Mat adaptive_example = src; // ROI¿µ¿ªÀÎ clone matrix -> adaptive_thresholding Àû¿ë
+		Mat adaptive_example = src; // ROIï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ clone matrix -> adaptive_thresholding ï¿½ï¿½ï¿½ï¿½
 		GaussianBlur(adaptive_example, adaptive_example, Size(25, 25), 3);
 		adaptiveThreshold(adaptive_example, adaptive_example, 255, ADAPTIVE_THRESH_MEAN_C, THRESH_BINARY, 31, -1);
 		//////////////////////////////////////////////////////////////////////////////////////////////
@@ -176,7 +182,7 @@ namespace CRVL
 		//imshow("_src",_src);
 		Mat predictData(17500, 1 , CV_32FC1);
 
-		//only H space 
+		//only H space
 		cv::Mat srcChannel_H;
 		cv::Mat srcChannel_S;
 		cv::Mat srcChannel_V;
@@ -238,7 +244,7 @@ namespace CRVL
 		Mat predictData(17500+34596, 1 , CV_32FC1);
 
 
-		//only H space 
+		//only H space
 		cv::Mat srcChannel_H;
 		cv::Mat srcChannel_S;
 		cv::Mat srcChannel_V;

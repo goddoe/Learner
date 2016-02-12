@@ -1,3 +1,9 @@
+// Author : Sung-ju Kim
+// Email  : goddoe2@gmail.com
+// github : https://github.com/goddoe
+// The MIT License (MIT)
+// Copyright (c) 2016 Sung-ju Kim
+
 #ifndef __IMAGEPROCESSING_H__
 #define __IMAGEPROCESSING_H__
 
@@ -24,14 +30,14 @@ using namespace cv;
 
 namespace CRVL
 {
-	
+
 	////////////////////////////////////////////////////////////////////////// //////////////////////////////////////////////////////////////////////////
 	// only Function
 	void findCircle(Mat& _src, Vec3f& _circle);
 	void cropInsideCircle(cv::Mat& src , cv::Mat& insideResult);
 
 	//////////////////////////////////////////////////////////////////////////
-	// Get Gradient Histogram	
+	// Get Gradient Histogram
 	void getGradientHistogram(cv::Mat _src, cv::Mat& _dst,int DIRECTION);
 	void getColorChannel(cv::Mat _src, cv::Mat& _dst, int CHANNEL);
 
@@ -48,14 +54,14 @@ namespace CRVL
 	// Class
 
 	//////////////////////////////////////////////////////////////////////////
-	// Labeling 
+	// Labeling
 	typedef struct Label
-	{   
+	{
 		int count;
 		int label;
 		Rect rect;
 
-	}Label;  
+	}Label;
 
 	void labeling(Mat& binaryImg, std::vector<Label*>& vectorOfLabels);
 
