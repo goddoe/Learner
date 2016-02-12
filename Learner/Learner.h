@@ -1,3 +1,9 @@
+// Author : Sung-ju Kim
+// Email  : goddoe2@gmail.com
+// github : https://github.com/goddoe
+// The MIT License (MIT)
+// Copyright (c) 2016 Sung-ju Kim
+
 #include <cv.hpp>
 #include <highgui.h>
 #include <opencv2/opencv.hpp>
@@ -57,7 +63,7 @@ namespace CRVL
         sj::Net* net;
 
         void (*getFeature)(Mat src, Mat& feature_CV_32FC1);
-	
+
 		void addData(char* _dir, int _label);
 		void train();
         //void train(int method);

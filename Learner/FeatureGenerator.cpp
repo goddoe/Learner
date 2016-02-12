@@ -1,3 +1,9 @@
+// Author : Sung-ju Kim
+// Email  : goddoe2@gmail.com
+// github : https://github.com/goddoe
+// The MIT License (MIT)
+// Copyright (c) 2016 Sung-ju Kim
+
 #include "FeatureGenerator.h"
 
 namespace CRVL
@@ -9,7 +15,7 @@ namespace CRVL
         cvtColor(_src,src, CV_BGR2GRAY);
         getHOG(src, Size(256,256), _outputFeature);
 	}
-    
+
     void make_HOG_64(cv::Mat _src, cv::Mat& _outputFeature)
 	{
         Mat src;
@@ -17,11 +23,11 @@ namespace CRVL
         cvtColor(_src,src, CV_BGR2GRAY);
         getHOG(src, Size(64,64), _outputFeature);
 	}
-    
+
      void make_HOG_256(cv::Mat _src, cv::Mat& _outputFeature)
      {
          Mat src;
- 
+
          cvtColor(_src,src, CV_BGR2GRAY);
          getHOG(src, Size(256,256), _outputFeature);
      }
@@ -92,7 +98,7 @@ namespace CRVL
 		//imshow("_src",_src);
 		Mat predictData(17500, 1 , CV_32FC1);
 
-		//only H space 
+		//only H space
 		cv::Mat srcChannel_H;
 		cv::Mat srcChannel_S;
 		cv::Mat srcChannel_V;
@@ -154,7 +160,7 @@ namespace CRVL
 		Mat predictData(17500+34596, 1 , CV_32FC1);
 
 
-		//only H space 
+		//only H space
 		cv::Mat srcChannel_H;
 		cv::Mat srcChannel_S;
 		cv::Mat srcChannel_V;

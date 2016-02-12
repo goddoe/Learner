@@ -1,3 +1,9 @@
+// Author : Sung-ju Kim
+// Email  : goddoe2@gmail.com
+// github : https://github.com/goddoe
+// The MIT License (MIT)
+// Copyright (c) 2016 Sung-ju Kim
+
 #include "DirControl.h"
 
 namespace sj

@@ -1,3 +1,9 @@
+// Author : Sung-ju Kim
+// Email  : goddoe2@gmail.com
+// github : https://github.com/goddoe
+// The MIT License (MIT)
+// Copyright (c) 2016 Sung-ju Kim
+
 #include "ImageProcessing.h"
 
 using namespace std;
@@ -15,7 +21,7 @@ namespace CRVL
 		cv::Mat result(src.rows, src.cols, CV_8UC1);
 
 		uchar* src_data		=	(uchar*)src.data;
-		uchar* result_data	=	(uchar*)result.data; 
+		uchar* result_data	=	(uchar*)result.data;
 
 		int filter[GGH_DIRECTION_NUM][3][3]={
 			{
@@ -153,7 +159,7 @@ namespace CRVL
 		{
 			for (int _x = 0 ; _x <src.cols ; ++_x)
 			{
-				distSum += (float)src.at<uchar>(_y,_x);	
+				distSum += (float)src.at<uchar>(_y,_x);
 			}
 		}
 
@@ -175,7 +181,7 @@ namespace CRVL
 
 	////////////////////////////////////////////////////////////////////////// //////////////////////////////////////////////////////////////////////////
 	// getHOG
-	// 128, 256 °ú °°Àº ¼ýÀÚµé ÃßÃµ
+	// 128, 256 ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Úµï¿½ ï¿½ï¿½Ãµ
 	Mat getHOG(Mat _src, Size _winSize)
 	{
 		resize(_src, _src, _winSize, INTER_LANCZOS4);
@@ -227,7 +233,7 @@ namespace CRVL
 	//////////////////////////////////////////////////////////////////////////
 	// About Labeling
 	//////////////////////////////////////////////////////////////////////////
-	//  ³ªÁß¿¡ ¼º´ÉÁ» Çâ»ó½ÃÅ°ÀÚ
+	//  ï¿½ï¿½ï¿½ß¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Å°ï¿½ï¿½
 	void labeling(Mat& src, vector<Label*>& vecLabel)
 	{
 		// Only 1-Channel
@@ -238,13 +244,13 @@ namespace CRVL
 		int height    = src.rows;
 		int width    = src.cols;
 
-		// input image, result image¸¦ image size¸¸Å­ µ¿ÀûÇÒ´ç
+		// input image, result imageï¿½ï¿½ image sizeï¿½ï¿½Å­ ï¿½ï¿½ï¿½ï¿½ï¿½Ò´ï¿½
 		unsigned char*    inputImage    = new unsigned char    [height * width];
 		int*            resultImage    = new int            [height * width];
 
 
 
-		// before labeling prcess, initializing 
+		// before labeling prcess, initializing
 		for( int y = 0; y < height; y++ ){
 			for( int x = 0; x < width; x++ ){
 				// image copy
@@ -259,13 +265,13 @@ namespace CRVL
 		namedWindow("process", CV_WINDOW_NORMAL);
 #endif
 		//// 8-neighbor labeling
-		// Labeling °úÁ¤¿¡¼­ stack overflow ¹æÁö¸¦ À§ÇÑ stl <stack>»ç¿ë 
+		// Labeling ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ stack overflow ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ stl <stack>ï¿½ï¿½ï¿½ï¿½
 		std::stack<cv::Point> st;
 		int labelNumber = 0;
 		int count = 0;
 		for( int y = 1; y < height - 1; y++ ){
 			for( int x = 1; x < width - 1; x++ ){
-				// source image°¡ 255ÀÏ °æ¿ì + Labeling ¼öÇàµÇÁö ¾ÊÀº ÇÈ¼¿¿¡¼­¸¸ labeling process ½ÃÀÛ
+				// source imageï¿½ï¿½ 255ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ + Labeling ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½È¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ labeling process ï¿½ï¿½ï¿½ï¿½
 				if( inputImage[width * y + x] != 255 || resultImage[width * y + x] != 0 ) continue;
 
 				labelNumber += 1;
@@ -285,34 +291,34 @@ namespace CRVL
 
 				//Mat targetImage = Mat::zeros(height, width, CV_8UC1);
 
-				// »õ·Î¿î label seed¸¦ stack¿¡ push
+				// ï¿½ï¿½ï¿½Î¿ï¿½ label seedï¿½ï¿½ stackï¿½ï¿½ push
 				st.push(Point(x, y));
 
-				// ÇØ´ç label seed°¡ labelingµÉ ¶§(stackÀÌ ºô ¶§) ±îÁö ¼öÇà
+				// ï¿½Ø´ï¿½ label seedï¿½ï¿½ labelingï¿½ï¿½ ï¿½ï¿½(stackï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½) ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 				while( !st.empty() ){
-					// stack topÀÇ label point¸¦ ¹Þ°í pop
+					// stack topï¿½ï¿½ label pointï¿½ï¿½ ï¿½Þ°ï¿½ pop
 					int ky = st.top().y;
 					int kx = st.top().x;
 					st.pop();
 
-					// label seedÀÇ label number¸¦ result image¿¡ ÀúÀå
+					// label seedï¿½ï¿½ label numberï¿½ï¿½ result imageï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 					resultImage[width * ky + kx] = 255;
 					//targetImage.at<uchar>(Point(kx, ky)) = 255;
 
 					// search 8-neighbor
 					for( int ny = ky - 1; ny <= ky + 1; ny++ ){
-						// yÃà ¹üÀ§¸¦ ¹þ¾î³ª´Â Á¡ Á¦¿Ü
+						// yï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½î³ªï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 						if( ny < 0 || ny >= height) continue;
 						for( int nx = kx - 1; nx <= kx + 1; nx++ ){
 
-							// xÃà ¹üÀ§¸¦ ¹þ¾î³ª´Â Á¡ Á¦¿Ü
+							// xï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½î³ªï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 							if( nx < 0|| nx >= width) continue;
 
-							// source image°¡ °ªÀÌ ÀÖ°í labelingÀÌ ¾ÈµÈ ÁÂÇ¥¸¦ stack¿¡ push
+							// source imageï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ö°ï¿½ labelingï¿½ï¿½ ï¿½Èµï¿½ ï¿½ï¿½Ç¥ï¿½ï¿½ stackï¿½ï¿½ push
 							if( inputImage[width * ny + nx] != 255 || resultImage[width * ny + nx] != 0 ) continue;
 							st.push(Point(nx, ny));
 
-							// Å½»öÇÑ ÇÈ¼¿ÀÌ´Ï labeling
+							// Å½ï¿½ï¿½ï¿½ï¿½ ï¿½È¼ï¿½ï¿½Ì´ï¿½ labeling
 							resultImage[width * ny + nx] = 255;
 							//targetImage.at<uchar>(Point(kx, ky)) =255;
 
@@ -322,7 +328,7 @@ namespace CRVL
 							waitKey(1);
 #endif
 
-							//¿À¸¥ÂÊ ¿ÞÂÊ À§¾Æ·¡ ¹Ù¿îµå
+							//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Æ·ï¿½ ï¿½Ù¿ï¿½ï¿½ï¿½
 							if(ny <= min_y){
 								min_y = ny;
 							}

@@ -18,4 +18,4 @@ Learner is Super-Easy Machine Learning Library to apply your own Object Detectio
 + github: https://github.com/goddoe
 
 ##License
->Apache 2.0 License
+>MIT License

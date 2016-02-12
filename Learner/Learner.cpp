@@ -1,3 +1,9 @@
+// Author : Sung-ju Kim
+// Email  : goddoe2@gmail.com
+// github : https://github.com/goddoe
+// The MIT License (MIT)
+// Copyright (c) 2016 Sung-ju Kim
+
 #include "Learner.h"
 //#include <Windows.h>
 
@@ -35,16 +41,16 @@ namespace CRVL
 	{
         char* dir = new char[1024];
 		strcpy(dir, _dir);
-	
+
 		m_folderList.push_back(dir);
-		
+
 		vector<char*> fileList;
         char filter[64] = IMAGE_EXTENSION;
         DirControl::makeFileList(dir, fileList,filter);
         //DirControl::makeFileList(dir, fileList);
 
 		//////////////////////////////////////////////////////////////////////////
-		// dirÀÌ µÎ±ºµ¥¿¡ µÇ¾îÀÖ¾î¼­ ¸Þ¸ð¸® ÇØÁ¦¸¦ ¾î¶»°Ô ÇÏÁö?
+		// dirï¿½ï¿½ ï¿½Î±ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ç¾ï¿½ï¿½Ö¾î¼­ ï¿½Þ¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½î¶»ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½?
         // will released in train()
 		for(int i = 0 ; i < fileList.size() ; ++i)
 		{
