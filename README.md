@@ -8,9 +8,9 @@ Learner is Super-Easy Machine Learning Library to apply your own Object Detectio
 
 ##Environment, Dependencies
 + Leaner supports every OS; Windows, Linux, OSX.
-+ C++ (Learner supports only C++ now.)
-+ Qt (It use Qt Library for OS independency.)
-+ OpenCV (Computer Vision Library)
++ C++     (Learner supports only C++ now.)
++ Qt      (Learner uses Qt Library for OS independency.)
++ OpenCV  (Computer Vision Library)
 
 
 ## Authors
