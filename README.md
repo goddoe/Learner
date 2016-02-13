@@ -4,6 +4,7 @@ Learner is Super-Easy Machine Learning Library to apply your own Object Detectio
 + Learner supports two Machine Learning technique; Support Vector Machine(SVM) and Multi-Layer Perceptron(MLP).
 + Learner can extract Histogram of Oriented Gradients from your image data to generate a feature.
 
+> http://goddoe.github.io/Learner
 
 ##Environment, Dependencies
 + Leaner support every OS; Windows, Linux, OSX.
@@ -18,4 +19,4 @@ Learner is Super-Easy Machine Learning Library to apply your own Object Detectio
 + github: https://github.com/goddoe
 
 ##License
->MIT License
+> MIT License
