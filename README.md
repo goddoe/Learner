@@ -1,8 +1,8 @@
 # Welcome to Learner!
-Learner is Super-Easy Machine Learning Library to apply your own Object Detection or Recognition project using your image data.
+Learner is Super-Easy Machine Learning Library which can help your own Object Detection or Recognition project using your own image data.
 
 + Learner supports two Machine Learning technique; Support Vector Machine(SVM) and Multi-Layer Perceptron(MLP).
-+ Learner can extract Histogram of Oriented Gradients from your image data to generate a feature.
++ Learner can extract Histogram of Oriented Gradients from your image data to generate features.
 
 > http://goddoe.github.io/Learner
 
